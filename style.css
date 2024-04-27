@@ -1,0 +1,193 @@
+/* Remover margens de todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* Estilo para o conteúdo do texto */
+.content {
+    text-align: justify; 
+    margin-top: 50px; 
+    margin-bottom: 100px; 
+    padding: 20px; 
+    color: white; 
+    display: none;
+}
+
+/* Estilo para os títulos do texto */
+.content h1, .content h2 {
+    color: white; 
+    margin-bottom: 15px; 
+    text-align: center; 
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+}
+
+/* Estilo para os parágrafos do texto */
+.content p {
+    color: white; 
+    line-height: 1.8; 
+    margin-bottom: 20px; 
+    text-align: justify; 
+    font-size: 18px; 
+}
+
+
+
+
+/* Ajuste para o rodapé não sobrepor o conteúdo */
+.main-content {
+    flex: 1;
+    margin-bottom: 60px; 
+}
+
+
+/* Estilo para o header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #008080;
+    padding: 10px;
+}
+
+/* Estilo para a logo e o menu */
+nav.logo, nav.menu {
+    flex: 1;
+}
+
+/* Estilo para a imagem dentro da logo */
+nav.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Estilo para o contêiner do menu */
+.menu-container {
+    display: flex;
+}
+
+/* Estilo para a lista de menu */
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+/* Estilo para os itens do menu */
+nav.menu li {
+    margin-right: 10px;
+}
+
+/* Estilo para os links do menu */
+nav.menu li a {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+nav.menu li a:hover {
+    transform: scale(1.1);
+    border-color: #3498db;
+    color: #3498db;
+}
+/* Estilo para o corpo da página */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; 
+    background: linear-gradient(120deg, #FFD700, #FF4500); 
+}
+
+/* Estilo para o conteúdo da página */
+.main-content {
+    flex: 1;
+}
+
+/* Estilo para o rodapé */
+footer {
+    background-color: #008080;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+/* Estilo para o conteúdo do rodapé */
+.footer-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* Estilo para o texto no rodapé */
+.footer-text {
+    text-align: center;
+}
+
+
+
+
+
+/* Efeito de flutuação para o ícone */
+.whatsapp-float {
+    position: fixed; 
+    bottom: 40px;
+    right: 40px; 
+    z-index: 1000; 
+    transition: all 0.3s ease; 
+}
+
+/* Efeito de hover para a flutuação */
+.whatsapp-float:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+}
+
+/* Estilo para a animação de carregamento */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF; 
+    z-index: 9999; 
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+/* Animação para aparecer gradualmente */
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Estilos para esconder o conteúdo durante a animação de carregamento */
+body.loading {
+    overflow: hidden;
+}
+/* Estilo para o conteúdo depois que a página é carregada */
+body.loaded .content {
+    display: block;
+}
