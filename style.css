@@ -11,25 +11,24 @@
     margin-top: 50px; 
     margin-bottom: 100px; 
     padding: 20px; 
-    color: white; 
     display: none;
 }
 
 /* Estilo para os títulos do texto */
 .content h1, .content h2 {
-    color: white; 
+    color: black; 
     margin-bottom: 15px; 
     text-align: center; 
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+    
 }
 
 /* Estilo para os parágrafos do texto */
 .content p {
-    color: white; 
+    color: black; 
     line-height: 1.8; 
     margin-bottom: 20px; 
     text-align: justify; 
-    font-size: 18px; 
+    font-size: 25px; 
 }
 
 
@@ -64,7 +63,8 @@ nav.logo img {
 
 /* Estilo para o contêiner do menu */
 .menu-container {
-    display: flex;
+    display: flex;,
+	font-size: 100px;
 }
 
 /* Estilo para a lista de menu */
@@ -77,6 +77,7 @@ nav.logo img {
 /* Estilo para os itens do menu */
 nav.menu li {
     margin-right: 10px;
+	
 }
 
 /* Estilo para os links do menu */
@@ -90,6 +91,7 @@ nav.menu li a {
     color: #000;
     text-decoration: none;
     transition: all 0.3s ease;
+	font-size: 25px;
 }
 
 /* Efeito ao passar o mouse */
@@ -190,4 +192,8 @@ body.loading {
 /* Estilo para o conteúdo depois que a página é carregada */
 body.loaded .content {
     display: block;
+}
+button{
+	position: absolute;
+	bottom: 20px;
 }
