@@ -47,7 +47,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: #008080;
-    padding: 10px;
+    padding: 5px;
 }
 
 /* Estilo para a logo e o menu */
@@ -63,8 +63,8 @@ nav.logo img {
 
 /* Estilo para o contêiner do menu */
 .menu-container {
-    display: flex;,
-	font-size: 100px;
+    display: flex;
+	font-size: 30px;
 }
 
 /* Estilo para a lista de menu */
@@ -193,7 +193,98 @@ body.loading {
 body.loaded .content {
     display: block;
 }
-button{
-	position: absolute;
-	bottom: 20px;
+/* Estilos para o botão flutuante */
+.floating-button {
+    position: fixed;
+    bottom: 50px;
+    left: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%; /* Agora é um círculo */
+    width: 60px; /* Largura igual à altura para formar um círculo */
+    height: 60px; /* Altura igual à largura para formar um círculo */
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que o botão esteja acima dos outros elementos */
+}
+
+.floating-button:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo para o ícone dentro do botão flutuante */
+.floating-button i {
+    font-size: 40px; /* Tamanho do ícone ajustado para 24px */
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 15px; /* Aumentado o padding para mais espaço */
+    border-radius: 5px;
+    bottom: calc(100% + 10px); /* Posicionado acima do botão */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    font-size: 14px; /* Tamanho da fonte aumentado para melhor legibilidade */
+    line-height: 1.4; /* Espaçamento entre linhas aumentado */
+    text-align: center; /* Alinhamento centralizado */
+}
+
+.floating-button:hover .tooltip {
+    display: block;
+}
+
+/* Estilos para telas menores que 768px (tamanhos de celular) */
+@media screen and (max-width: 768px) {
+    .menu-container ul {
+        display: none; /* Oculta a lista de itens do menu */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o ícone de hambúrguer */
+        cursor: pointer; /* Muda o cursor para indicar que é clicável */
+        text-align: right; /* Alinha o ícone à direita */
+        padding: 10px; /* Adiciona espaçamento */
+    }
+
+    /* Estilos para transformar a lista em ícone de hambúrguer */
+    .menu-toggle:before {
+        content: "\2630"; /* Código Unicode do ícone de hambúrguer */
+        font-size: 24px; /* Tamanho do ícone */
+        transition: transform 0.3s ease; /* Transição suave */
+    }
+
+    .menu-toggle.active:before {
+        transform: rotate(90deg); /* Rotação do ícone ao ativar o menu */
+    }
+
+    .menu-toggle.active + .menu-container ul {
+        display: block; /* Mostra a lista quando o ícone está ativo */
+        animation: slideDown 0.3s ease; /* Animação de slide para baixo */
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+}
+
+
+
+.menu-list li:nth-child(1) a::before {
+    content: "\f007"; /* Unicode do ícone de login */
+    font-family: "Font Awesome 5 Free"; /* Fonte do ícone */
+    margin-right: 5px; /* Espaçamento entre o ícone e o texto */
 }

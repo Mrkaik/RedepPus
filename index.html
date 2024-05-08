@@ -3,6 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <title>Rede Plus Intranet</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='./style.css'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     
@@ -17,12 +18,14 @@
                 <img src="./logo_redeplus.png" alt="logo">
             </a>
         </nav>
+        <div class="menu-toggle"></div>
+        
         <div class="menu-container">
             <nav class="menu">
                 <ul class="menu-list"> <!-- Adicionando a classe menu-list -->
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Suporte</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Links</a></li>
+                    <li><a href="http://redeplus.ddns.net:8001/suporte">Suporte</a></li>
                     <li><a href="#">Contato</a></li>
                 </ul>
             </nav>
@@ -44,7 +47,12 @@
         Proteja sua rede doméstica com senhas fortes e utilize firewalls e antivírus atualizados para proteger seus dispositivos contra ameaças online.
         Ao seguir essas práticas e manter-se atualizado sobre as últimas ameaças online, você pode reduzir significativamente o risco de cair em golpes na internet e proteger sua segurança e privacidade online.</p>
     </div>
-	<button tyoe="button">Clicl Me!</button>
+
+	<button class="floating-button" onclick="window.location.href='http://redeplus.ddns.net:8001/suporte';">
+        <i class="fas fa-comment"></i> <!-- Ícone de chat -->
+        <span class="tooltip">Clique aqui para ser redirecionado ao suporte</span>
+    </button>
+
     <!-- Ícone do WhatsApp -->
     <a href="https://api.whatsapp.com/send?phone=seu_numero_aqui" class="whatsapp-float" target="_blank">
         <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"style="width: 60px; height: 60px;"/>

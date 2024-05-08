@@ -18,3 +18,7 @@ window.addEventListener('load', function () {
 window.addEventListener('beforeunload', function () {
     scrollToTop(); 
 });
+// Adicionar classe 'active' ao clicar no ícone de hambúrguer
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+});
