@@ -65,16 +65,28 @@ nav.menu li a:hover {
     color: #3498db;
 }
 body {
-    overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+    margin: 0;
+	padding: 0;
+	height:100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .content {
-    /* Garante que a div ocupe toda a largura e altura da viewport */
+    position: relative;
     width: 100%;
-    min-height: 100vh; /* Altura mínima da viewport */
-    background-size: cover; /* Redimensiona a imagem para cobrir o elemento */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content img{
+    width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .content h1 {
