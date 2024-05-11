@@ -113,6 +113,16 @@ body {
     z-index: 1; /* Coloca o botão sobre a imagem de fundo */
 }
 
+@media screen and (max-width: 768px) {
+    .content h1 {
+        font-size: 2rem; 
+    }
+
+    .btn {
+        font-size: 14px; 
+    }
+}
+
 .btn:hover {
     background-color: #0056b3;
 }
