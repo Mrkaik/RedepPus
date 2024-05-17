@@ -1,0 +1,334 @@
+/* Remover margens de todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* Estilo para o header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #131194, #35a3a3);
+    padding: 5px;
+    position: relative; /* Adicionando posição relativa */
+}
+
+/* Estilo para a logo e o menu */
+nav.logo, nav.menu {
+    flex: 1;
+}
+
+/* Estilo para a imagem dentro da logo */
+nav.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Estilo para o contêiner do menu */
+.menu-container {
+    display: flex;
+    font-size: 30px;
+}
+
+/* Estilo para a lista de menu */
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+/* Estilo para os itens do menu */
+nav.menu li {
+    margin-right: 10px;
+}
+
+/* Estilo para os links do menu */
+nav.menu li a {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 25px;
+}
+
+/* Efeito ao passar o mouse */
+nav.menu li a:hover {
+    transform: scale(1.1);
+    border-color: #3498db;
+    color: #3498db;
+}
+
+/* Estilo para o conteúdo */
+.content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/fundo.jpeg'); /* Corrigindo a URL da imagem */
+    background-size: cover;
+    background-position: center;
+}
+
+
+.content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content h1 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    text-align: center;
+}
+
+/* Estilo para a janela do vídeo */
+.video-window {
+    display: none; /* Inicialmente escondido */
+    margin-left: 200px; /* Largura do painel lateral + margem */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#tutorial-video {
+    width: 100%;
+    height: auto;
+    outline: none;
+}
+
+/* Rodapé */
+footer {
+    background-image: linear-gradient(to bottom, #131194, #35a3a3);
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text {
+    text-align: center;
+}
+
+/* Efeito de flutuação para o ícone */
+.whatsapp-float {
+    position: fixed;
+    bottom: 9px;
+    left: 40px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de hover para a flutuação */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para a animação de carregamento */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    z-index: 9999;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+/* Animação para aparecer gradualmente */
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Estilos para esconder o conteúdo durante a animação de carregamento */
+body.loading {
+    overflow: hidden;
+}
+
+/* Estilo para o conteúdo depois que a página é carregada */
+body.loaded .content {
+    display: block;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.floating-button:hover .tooltip {
+    display: block;
+}
+.left-panel {
+    position: fixed;
+    top: 0;
+    left: -200px; /* Oculta o painel à esquerda da tela */
+    width: 200px;
+    height: 100%;
+    background-color: #ccc;
+    z-index: 999;
+    transition: left 0.3s ease; /* Adiciona transição para uma animação suave */
+}
+
+.left-panel.open {
+    left: 0; /* Abre o painel deslocando-o para a direita */
+}
+
+.center-button {
+    position: fixed;
+    top: 50%;
+    left: 10px; /* Ajuste a posição conforme necessário */
+    transform: translateY(-10%);
+    background-color: #3498db;
+    color: #fff;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.3s ease; /* Adiciona a mesma transição do painel para uma animação suave */
+}
+
+.center-button::after {
+    content: ">";
+    margin-left: 5px; /* Espaçamento entre o texto e a seta */
+}
+
+.panel-title {
+    position: relative;
+    display: inline-block;
+    width: 100%; 
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    text-align: center; /* Alinha o texto ao centro */
+    margin: 0;
+    border: none;
+}
+
+
+/* Estilo para a seta apontando para baixo */
+.panel-title::after {
+    content: "v";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+/* Estilo para a janela do tooltip */
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Exibe o tooltip quando o mouse passa sobre o título */
+.panel-title:hover + .tooltip {
+    display: block;
+}
+/* Adicione esta regra para ocultar inicialmente a janela de links */
+.link-window {
+    display: none;
+}
+
+/* Adicione esta regra para mostrar a janela de links quando a classe 'show' é adicionada */
+.link-window.show {
+    display: block;
+}
+/* Estilos para telas menores que 768px (tamanhos de celular) */
+@media screen and (max-width: 768px) {
+    .menu-container ul {
+        display: none; /* Oculta a lista de itens do menu */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o ícone de hambúrguer */
+        cursor: pointer; /* Muda o cursor para indicar que é clicável */
+        text-align: right; /* Alinha o ícone à direita */
+        padding: 10px; /* Adiciona espaçamento */
+    }
+
+    /* Estilos para transformar a lista em ícone de hambúrguer */
+    .menu-toggle:before {
+        content: "\2630"; /* Código Unicode do ícone de hambúrguer */
+        font-size: 24px; /* Tamanho do ícone */
+        transition: transform 0.3s ease; /* Transição suave */
+    }
+
+    .menu-toggle.active:before {
+        transform: rotate(90deg); /* Rotação do ícone ao ativar o menu */
+    }
+
+    .menu-toggle.active + .menu-container ul {
+        display: block; /* Mostra a lista quando o ícone está ativo */
+        animation: slideDown 0.3s ease; /* Animação de slide para baixo */
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+}
